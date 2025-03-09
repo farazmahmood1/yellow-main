@@ -110,7 +110,7 @@ const PhotoSection = () => {
     setIsViewerOpen(false);
   };
   return (
-    <div className='photo-section' style={{ backgroundColor: "#e9e9e9" }}>
+    <div className='photo-section'>
       <div className='title-image'>
         <img itemProp="image" src={`${ImagesBaseUrl}photocover.jpg`} alt=" " />
       </div>

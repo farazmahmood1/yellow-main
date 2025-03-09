@@ -21,9 +21,9 @@ const HomePage = () => {
     <div>
       <Hero />
       <Perspectives />
-      {/* <Blogs /> */}
       <Digitalwrape />
-      {/* <WorkCounter /> */}
+      <WorkCounter />
+      <Blogs />
       <Homeabout />
       <Contactform />
     </div>

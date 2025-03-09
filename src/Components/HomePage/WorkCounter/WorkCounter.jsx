@@ -3,18 +3,19 @@ import './WorkCounter.scss';
 
 const WorkCounter = () => {
     const [counters, setCounters] = useState({
-        customers: 0,
-        designThinkers: 0,
-        languages: 0,
+        weddingsFilmed: 0,
+        happyCouples: 0,
+        destinationsCovered: 0,
     });
 
     const counterContainerRef = useRef(null);
 
     useEffect(() => {
         const countersToReach = {
-            customers: 1600,
-            designThinkers: 500,
-            languages: 12,
+            weddingsFilmed: 300,
+            happyCouples: 500,
+            destinationsCovered: 50,
+            awardWinning: 10,
         };
 
         const animationDuration = 2000;
@@ -29,17 +30,20 @@ const WorkCounter = () => {
                         const elapsedTime = currentTime - startTime;
 
                         if (elapsedTime < animationDuration) {
-                            setCounters((prevCounters) => ({
-                                customers: Math.ceil(
-                                    (countersToReach.customers / animationDuration) * elapsedTime
+                            setCounters({
+                                weddingsFilmed: Math.ceil(
+                                    (countersToReach.weddingsFilmed / animationDuration) * elapsedTime
                                 ),
-                                designThinkers: Math.ceil(
-                                    (countersToReach.designThinkers / animationDuration) * elapsedTime
+                                happyCouples: Math.ceil(
+                                    (countersToReach.happyCouples / animationDuration) * elapsedTime
                                 ),
-                                languages: Math.ceil(
-                                    (countersToReach.languages / animationDuration) * elapsedTime
+                                destinationsCovered: Math.ceil(
+                                    (countersToReach.destinationsCovered / animationDuration) * elapsedTime
                                 ),
-                            }));
+                                awardWinning: Math.ceil(
+                                    (countersToReach.awardWinning / animationDuration) * elapsedTime
+                                ),
+                            });
 
                             requestAnimationFrame(updateCounters);
                         } else {
@@ -48,7 +52,7 @@ const WorkCounter = () => {
                     };
 
                     updateCounters();
-                    observer.disconnect(); // Stop observing once the animation has started
+                    observer.disconnect();
                 }
             });
         });
@@ -65,31 +69,28 @@ const WorkCounter = () => {
     }, []);
 
     return (
-        <>
-            <div className="counter-container" ref={counterContainerRef}>
-                <div className="counter">
-                    <div className="count">{counters.customers}+ Customers</div>
-                    <div className="label">Served</div>
-                </div>
-
-                <div className="counter">
-                    <div className="count">{counters.designThinkers}+ Design</div>
-                    <div className="label">Thinkers</div>
-                </div>
-
-                <div className="counter">
-                    <div className="count">{counters.languages}+ Languages</div>
-                    <div className="label">Spoken</div>
-                </div>
-
-                <div className="counter">
-                    <div className="count">CMMI5</div>
-                    <div className="label">Maturity Level</div>
-                </div>
+        <div className="counter-container" ref={counterContainerRef}>
+            <div className="counter">
+                <div className="count">{counters.weddingsFilmed}+</div>
+                <div className="label">Weddings Filmed</div>
             </div>
-        </>
+
+            <div className="counter">
+                <div className="count">{counters.happyCouples}+</div>
+                <div className="label">Happy Couples</div>
+            </div>
+
+            <div className="counter">
+                <div className="count">{counters.destinationsCovered}+</div>
+                <div className="label">Destinations Covered</div>
+            </div>
+
+            <div className="counter">
+                <div className="count">{counters.awardWinning}+</div>
+                <div className="label">Award Winning Cinematography</div>
+            </div>
+        </div>
     );
 };
 
 export default WorkCounter;
-

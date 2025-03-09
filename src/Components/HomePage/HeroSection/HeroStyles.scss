@@ -19,6 +19,25 @@
   }
 }
 
+.audio-toggle-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  height: 30px;
+  width: 30px;
+}
+
+.audio-toggle-button:hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: black;
+}
+
 
 .videoPara {
   display: flex;
@@ -43,6 +62,7 @@
 .video-section {
   margin-top: 70px;
 }
+
 .parent-container {
   position: relative;
   margin-top: 500px;

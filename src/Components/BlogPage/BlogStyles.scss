@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Vidaloka');
+
+.blog-heading {
+    background-color: #e9e9e9;
+
+    .title-image {
+        width: 100%;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media screen and (max-width: 768px) {
+            img {
+                margin-top: 70px;
+            }
+        }
+    }
+
+    .heading-blogs {
+        margin-top: 50px;
+        font-size: 30px;
+        font-family: 'Vidaloka', sans-serif;
+
+    }
+}
+
+
